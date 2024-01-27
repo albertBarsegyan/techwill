@@ -8,7 +8,6 @@ export function Intro({ handleStartQuiz }: { handleStartQuiz: () => void }) {
     <Box>
       <Typography
         sx={{
-          marginTop: "30px",
           fontSize: "24px",
           color: "lightColor",
           fontWeight: "600",
@@ -51,6 +50,7 @@ export function Intro({ handleStartQuiz }: { handleStartQuiz: () => void }) {
           width: "100%",
           backgroundColor: "primary.main",
           marginTop: "80px",
+          marginBottom: "40px",
           color: "white",
           fontSize: "28px",
           fontWeight: "700",

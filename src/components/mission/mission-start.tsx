@@ -18,7 +18,6 @@ export function MissionStart({ handleNext }: { handleNext: () => void }) {
       <Typography
         sx={{
           color: "lightColor",
-          marginTop: "30px",
           fontSize: "24px",
           fontWeight: "600",
           marginBottom: "12px",
@@ -33,7 +32,17 @@ export function MissionStart({ handleNext }: { handleNext: () => void }) {
         alt=""
       />
 
-      <Typography></Typography>
+      <Typography
+        sx={{ color: "#515151", fontWeight: "300", fontSize: "20px" }}
+      >
+        Description:
+      </Typography>
+      <Typography
+        sx={{ color: "#515151", fontWeight: "300", marginTop: "4px" }}
+      >
+        Please choose a partner and engage in a silent exchange for 15 seconds,
+        looking at each other without speaking.
+      </Typography>
       <Typography
         sx={{
           color: "lightColor",

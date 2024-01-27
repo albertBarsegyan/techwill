@@ -15,7 +15,7 @@ export function Result() {
       alignItems="center"
       justifyContent="center"
       flexDirection="column"
-      sx={{ height: "100vh", width: "100%" }}
+      sx={{ height: "100%", width: "100%" }}
     >
       <Box>
         <Typography

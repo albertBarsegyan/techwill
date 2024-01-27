@@ -9,7 +9,6 @@ export function Mission({ handleNextPage }: { handleNextPage: () => void }) {
       <Typography
         sx={{
           color: "lightColor",
-          marginTop: "30px",
           fontSize: "24px",
           fontWeight: "600",
           marginBottom: "12px",

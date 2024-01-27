@@ -42,7 +42,6 @@ export function Quiz({ handleNextStep }: { handleNextStep: () => void }) {
       <Typography
         sx={{
           color: "lightColor",
-          marginTop: "30px",
           fontSize: "24px",
           fontWeight: "600",
         }}
@@ -85,7 +84,14 @@ export function Quiz({ handleNextStep }: { handleNextStep: () => void }) {
           color: "white",
           fontSize: "28px",
           fontWeight: "700",
+          marginBottom: "40px",
         }}
+        disabledStyles={{
+          color: "white",
+          cursor: "pointer",
+          backgroundColor: "#86d984",
+        }}
+        disabled={!checkedId}
         hoverBackgroundColor="textDark"
         onClick={nextPageValidation}
       >
