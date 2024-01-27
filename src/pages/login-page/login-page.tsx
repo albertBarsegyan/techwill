@@ -3,16 +3,16 @@ import { PageLayout } from "../../layouts/page-layout/page-layout.tsx";
 import { PrimaryInput } from "../../components/common/input/primary-input/primary-input.tsx";
 import { useState } from "react";
 import { ButtonComponent } from "../../components/common/button/primary-button/primary-button.tsx";
-import { useAuth } from "../../hooks/use-auth.tsx";
+// import { useAuth } from "../../hooks/use-auth.tsx";
 
 export function LoginPage() {
   const [email, setEmail] = useState("our-friend-user");
   const [password, setPassword] = useState("our-friend-user");
-  const { login } = useAuth();
+  // const { login } = useAuth();
 
   const handleLogin = () => {
     if (email && password) {
-      login();
+      // login();
     }
   };
 
