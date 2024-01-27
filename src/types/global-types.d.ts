@@ -1,4 +1,4 @@
-declare module '@mui/material/styles' {
+declare module "@mui/material/styles" {
   interface Theme {
     status: {
       danger: string;
@@ -8,7 +8,7 @@ declare module '@mui/material/styles' {
   interface ThemeOptions {
     typography: { fontFamily: string };
     palette: {
-      mode: 'light' | 'dark';
+      mode: "light" | "dark";
       spacing: number;
       primary: {
         main: string;

@@ -1,9 +1,9 @@
-import { ReactNode } from 'react';
-import { navigationButtonStyles } from './navigation-button.styles.ts';
-import { useLocation } from 'react-router-dom';
-import { InternalErrorMessage } from '../../../../constants/message-constants.ts';
-import { Box, Link as MaterialLink, SxProps } from '@mui/material';
-import { ButtonComponent } from '../primary-button/primary-button.tsx';
+import { ReactNode } from "react";
+import { navigationButtonStyles } from "./navigation-button.styles.ts";
+import { useLocation } from "react-router-dom";
+import { InternalErrorMessage } from "../../../../constants/message-constants.ts";
+import { Box, Link as MaterialLink, SxProps } from "@mui/material";
+import { ButtonComponent } from "../primary-button/primary-button.tsx";
 
 interface NavigationButtonProps {
   sx?: SxProps<any>;
@@ -20,7 +20,9 @@ interface NavigationButtonProps {
 }
 
 const getNavigationButtonStyles = (setActive: boolean, buttonStyles: any) =>
-  setActive ? buttonStyles.navigationButtonLinkActive : buttonStyles.navigationButtonLink;
+  setActive
+    ? buttonStyles.navigationButtonLinkActive
+    : buttonStyles.navigationButtonLink;
 
 export function NavigationButton({
   children,
@@ -37,14 +39,27 @@ export function NavigationButton({
   const areAllSettingsExist = buttonSettings && linkSettings;
 
   if (areAllSettingsExist) {
-    return <div style={{ color: 'red' }}>{InternalErrorMessage.NavigationButton()}</div>;
+    return (
+      <div style={{ color: "red" }}>
+        {InternalErrorMessage.NavigationButton()}
+      </div>
+    );
   }
 
   if (linkSettings?.externalLink)
     return (
-      <MaterialLink sx={getNavigationButtonStyles(setActive, buttonStyles)} href={linkSettings.path}>
+      <MaterialLink
+        sx={getNavigationButtonStyles(setActive, buttonStyles)}
+        href={linkSettings.path}
+      >
         {children}
-        <Box sx={setActive ? buttonStyles.bottomBorder : buttonStyles.bottomBorderHidden} />
+        <Box
+          sx={
+            setActive
+              ? buttonStyles.bottomBorder
+              : buttonStyles.bottomBorderHidden
+          }
+        />
       </MaterialLink>
     );
 
@@ -53,12 +68,22 @@ export function NavigationButton({
 
     return (
       <MaterialLink
-        sx={isActivePath ? buttonStyles.navigationButtonLinkActive : buttonStyles.navigationButtonLink}
+        sx={
+          isActivePath
+            ? buttonStyles.navigationButtonLinkActive
+            : buttonStyles.navigationButtonLink
+        }
         href={linkSettings.path}
       >
         {children}
 
-        <Box sx={setActive ? buttonStyles.bottomBorder : buttonStyles.bottomBorderHidden} />
+        <Box
+          sx={
+            setActive
+              ? buttonStyles.bottomBorder
+              : buttonStyles.bottomBorderHidden
+          }
+        />
       </MaterialLink>
     );
   }
@@ -66,15 +91,29 @@ export function NavigationButton({
   if (buttonSettings) {
     return (
       <ButtonComponent
-        sx={setActive ? buttonStyles.navigationButtonActive : buttonStyles.navigationButton}
+        sx={
+          setActive
+            ? buttonStyles.navigationButtonActive
+            : buttonStyles.navigationButton
+        }
         onClick={buttonSettings.onClick}
       >
         {children}
 
-        <Box sx={setActive ? buttonStyles.bottomBorder : buttonStyles.bottomBorderHidden} />
+        <Box
+          sx={
+            setActive
+              ? buttonStyles.bottomBorder
+              : buttonStyles.bottomBorderHidden
+          }
+        />
       </ButtonComponent>
     );
   }
 
-  return <div style={{ color: 'red' }}>{InternalErrorMessage.NavigationButton()}</div>;
+  return (
+    <div style={{ color: "red" }}>
+      {InternalErrorMessage.NavigationButton()}
+    </div>
+  );
 }

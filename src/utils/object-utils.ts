@@ -11,7 +11,10 @@ export function areArraysEqual(arr1?: any[], arr2?: any[]): boolean {
     const item1 = arr1[i];
     const item2 = arr2[i];
 
-    if ((Array.isArray(item1) && !Array.isArray(item2)) || (!Array.isArray(item1) && Array.isArray(item2))) {
+    if (
+      (Array.isArray(item1) && !Array.isArray(item2)) ||
+      (!Array.isArray(item1) && Array.isArray(item2))
+    ) {
       return false;
     }
 
@@ -19,7 +22,7 @@ export function areArraysEqual(arr1?: any[], arr2?: any[]): boolean {
       if (!areArraysEqual(item1, item2)) {
         return false;
       }
-    } else if (typeof item1 === 'object' && typeof item2 === 'object') {
+    } else if (typeof item1 === "object" && typeof item2 === "object") {
       if (!areObjectsTheSame(item1, item2)) {
         return false;
       }
@@ -51,7 +54,7 @@ export function areObjectsTheSame(obj1: any, obj2: any): boolean {
       if (!areArraysEqual(val1, val2)) {
         return false;
       }
-    } else if (typeof val1 === 'object' && typeof val2 === 'object') {
+    } else if (typeof val1 === "object" && typeof val2 === "object") {
       if (!areObjectsTheSame(val1, val2)) {
         return false;
       }
@@ -85,4 +88,4 @@ export const excludeObjectFields = (object: any, fields: string[]) => {
   return result;
 };
 
-export const getCommaSeparatedText = (list: string[]) => list.join(', ');
+export const getCommaSeparatedText = (list: string[]) => list.join(", ");

@@ -1,10 +1,10 @@
-import { Button } from '@mui/material';
-import { PropsWithChildren } from 'react';
-import { SxProps } from '@mui/system';
-import { ThemeOptions } from '@mui/material/styles';
-import { SxStyleType } from '../../../../types/theme-types.ts';
-import { StyleConstants } from '../../../../constants/style-constants.ts';
-import { SystemStyleObject } from '@mui/system/styleFunctionSx/styleFunctionSx';
+import { Button } from "@mui/material";
+import { PropsWithChildren } from "react";
+import { SxProps } from "@mui/system";
+import { ThemeOptions } from "@mui/material/styles";
+import { SxStyleType } from "../../../../types/theme-types.ts";
+import { StyleConstants } from "../../../../constants/style-constants.ts";
+import { SystemStyleObject } from "@mui/system/styleFunctionSx/styleFunctionSx";
 
 interface ButtonProps extends PropsWithChildren {
   onClick?: (event: any) => void | null | Promise<void>;
@@ -14,12 +14,12 @@ interface ButtonProps extends PropsWithChildren {
   height?: string;
   hoverBackgroundColor?: string;
   hoverTextColor?: string;
-  variant?: 'text' | 'outlined' | 'contained';
+  variant?: "text" | "outlined" | "contained";
   opacity?: number;
   sx?: SxProps<ThemeOptions>;
   disableRipple?: boolean;
   id?: string;
-  type?: 'submit' | 'button';
+  type?: "submit" | "button";
   disabled?: boolean;
   disabledStyles?: SystemStyleObject<any>;
   dataIntercomTarget?: string;
@@ -48,25 +48,29 @@ const buttonStyles = ({
   height,
   sx = {},
   disabledStyles = {},
-}: ButtonStylesProps): SxStyleType<'button'> => {
+}: ButtonStylesProps): SxStyleType<"button"> => {
   const providedStyles = sx ?? {};
   const disabledStylesResult = disabledStyles ?? {};
 
   return {
     button: {
       bgcolor: backgroundColor,
-      textTransform: 'none',
-      minWidth: 'auto',
+      textTransform: "none",
+      minWidth: "auto",
       color,
       width,
       height,
-      '&:hover': {
-        bgcolor: hoverBackgroundColor ?? 'transparent',
+      "&:hover": {
+        bgcolor: hoverBackgroundColor ?? "transparent",
         color: hoverTextColor,
         opacity,
       },
+      "&:active": {
+        bgcolor: hoverBackgroundColor ?? "transparent",
+        color: hoverTextColor,
+      },
       ...providedStyles,
-      '&.Mui-disabled': { ...disabledStylesResult },
+      "&.Mui-disabled": { ...disabledStylesResult },
     },
   };
 };
@@ -85,7 +89,7 @@ export const ButtonComponent = ({
   sx = {},
   disableRipple = true,
   id,
-  type = 'button',
+  type = "button",
   disabled,
   disabledStyles,
   dataIntercomTarget,

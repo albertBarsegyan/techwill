@@ -1,6 +1,6 @@
-import { SxStyleType } from '../../../types/theme-types.ts';
+import { SxStyleType } from "../../../types/theme-types.ts";
 
-type RuleNames = 'separator';
+type RuleNames = "separator";
 
 interface SeparatorStyleProps {
   color?: string;
@@ -8,11 +8,15 @@ interface SeparatorStyleProps {
   bottomSpace?: number;
 }
 
-export const separatorStyles = ({ color, topSpace, bottomSpace }: SeparatorStyleProps): SxStyleType<RuleNames> => ({
+export const separatorStyles = ({
+  color,
+  topSpace,
+  bottomSpace,
+}: SeparatorStyleProps): SxStyleType<RuleNames> => ({
   separator: {
-    width: '100%',
+    width: "100%",
     marginTop: `${topSpace}px !important`,
     marginBottom: `${bottomSpace}px !important`,
-    bgcolor: color ?? 'gray100',
+    bgcolor: color ?? "gray100",
   },
 });

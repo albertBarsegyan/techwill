@@ -1,10 +1,10 @@
-import { ForwardedRef, forwardRef, useState } from 'react';
-import { imageLoaderUseStyles } from './image-lazy-loader.styles.ts';
+import { ForwardedRef, forwardRef, useState } from "react";
+import { imageLoaderUseStyles } from "./image-lazy-loader.styles.ts";
 
 export const enum ImgLoadState {
-  Idle = 'Idle',
-  Loading = 'Loading',
-  Success = 'Success',
+  Idle = "Idle",
+  Loading = "Loading",
+  Success = "Success",
 }
 
 interface ImageLazyLoaderProps {
@@ -14,13 +14,21 @@ interface ImageLazyLoaderProps {
   src: string | null;
   style?: any;
   alt: string;
-  crossOrigin?: '' | 'anonymous' | 'use-credentials';
+  crossOrigin?: "" | "anonymous" | "use-credentials";
   onLoad?: (e: React.SyntheticEvent<HTMLImageElement>) => void;
 }
 
 export const ImageLazyLoader = forwardRef(
   (
-    { width, crossOrigin, height, style, src, alt, onLoad }: ImageLazyLoaderProps,
+    {
+      width,
+      crossOrigin,
+      height,
+      style,
+      src,
+      alt,
+      onLoad,
+    }: ImageLazyLoaderProps,
     ref?: ForwardedRef<HTMLImageElement>
   ) => {
     const [imgData, setImgSrc] = useState({
@@ -47,11 +55,11 @@ export const ImageLazyLoader = forwardRef(
         onLoad={handleLoad}
         height={height}
         style={{ ...styles.image, ...style }}
-        src={src ?? ''}
+        src={src ?? ""}
         alt={alt}
       />
     );
   }
 );
 
-ImageLazyLoader.displayName = 'ImageLazyLoader';
+ImageLazyLoader.displayName = "ImageLazyLoader";

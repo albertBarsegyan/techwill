@@ -1,8 +1,11 @@
-import { ReactNode, useRef } from 'react';
-import { buttonByStatusStyles, primaryModalUseStyles } from './primary-modal.styles.ts';
-import { useOutsideClick } from '../../../../hooks/outside-click-hook.tsx';
-import { Box, Stack } from '@mui/material';
-import { ButtonComponent } from '../../button/primary-button/primary-button.tsx';
+import { ReactNode, useRef } from "react";
+import {
+  buttonByStatusStyles,
+  primaryModalUseStyles,
+} from "./primary-modal.styles.ts";
+import { useOutsideClick } from "../../../../hooks/outside-click-hook.tsx";
+import { Box, Stack } from "@mui/material";
+import { ButtonComponent } from "../../button/primary-button/primary-button.tsx";
 
 interface ModalSettings {
   content: ReactNode | string | null;
@@ -39,7 +42,11 @@ interface ModalGeneralButtonProps {
   onClose: () => void;
 }
 
-const ModalGeneralButton = ({ success, danger, onClose }: ModalGeneralButtonProps) => {
+const ModalGeneralButton = ({
+  success,
+  danger,
+  onClose,
+}: ModalGeneralButtonProps) => {
   const styles = buttonByStatusStyles();
 
   if (danger) {
@@ -87,8 +94,17 @@ export function PrimaryModal({ settings, onClose }: ModalProps) {
       <Box sx={styles.content} ref={modalContentRef}>
         {content}
 
-        <Stack direction={'row'} alignItems="center" justifyContent="flex-end" style={{ marginTop: '24px' }}>
-          <Stack direction={'row'} style={{ gap: '0 16px' }} alignItems="center">
+        <Stack
+          direction={"row"}
+          alignItems="center"
+          justifyContent="flex-end"
+          style={{ marginTop: "24px" }}
+        >
+          <Stack
+            direction={"row"}
+            style={{ gap: "0 16px" }}
+            alignItems="center"
+          >
             <ButtonComponent
               sx={styles.cancelButton}
               onClick={() => {
@@ -98,7 +114,11 @@ export function PrimaryModal({ settings, onClose }: ModalProps) {
             >
               {modalActions?.cancel.buttonText}
             </ButtonComponent>
-            <ModalGeneralButton onClose={onClose} success={modalActions?.success} danger={modalActions?.danger} />
+            <ModalGeneralButton
+              onClose={onClose}
+              success={modalActions?.success}
+              danger={modalActions?.danger}
+            />
           </Stack>
         </Stack>
       </Box>

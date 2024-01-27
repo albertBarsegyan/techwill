@@ -7,17 +7,17 @@ import {
   useEffect,
   useMemo,
   useState,
-} from 'react';
-import { setBodyOverflowHidden } from '../../utils/style-utils.ts';
-import { Snackbar } from '@mui/material';
-import { ZIndex } from '../../constants/style-constants.ts';
-import { SnackbarId } from '../../constants/snackbar-constants.ts';
+} from "react";
+import { setBodyOverflowHidden } from "../../utils/style-utils.ts";
+import { Snackbar } from "@mui/material";
+import { ZIndex } from "../../constants/style-constants.ts";
+import { SnackbarId } from "../../constants/snackbar-constants.ts";
 
 interface ModalSettings {
   content: ReactNode | string | null;
   snackBarSettings?: {
-    vertical: 'top' | 'bottom';
-    horizontal: 'left' | 'right';
+    vertical: "top" | "bottom";
+    horizontal: "left" | "right";
   };
 
   modalActions?: {
@@ -59,7 +59,7 @@ export const ModalContext = createContext<ModalContextProps>({
 const ModalInitialSettings: ModalSettings = {
   content: null,
   modalActions: {
-    cancel: { buttonText: 'Cancel', onClick: () => {} },
+    cancel: { buttonText: "Cancel", onClick: () => {} },
   },
 };
 
@@ -69,22 +69,33 @@ const SnackbarInitialSettings: SnackBarSettings = {
   id: null,
 };
 
-
-
 export function ModalProvider({ children }: PropsWithChildren) {
-  const [modalSettings, setModalSettings] = useState<ModalSettings>(ModalInitialSettings);
-  const [snackbarSettings, setSnackbarSettings] = useState<SnackBarSettings>(SnackbarInitialSettings);
+  const [modalSettings, setModalSettings] =
+    useState<ModalSettings>(ModalInitialSettings);
+  const [snackbarSettings, setSnackbarSettings] = useState<SnackBarSettings>(
+    SnackbarInitialSettings
+  );
 
-  const provideModalSettings = useCallback((settings: ModalSettings) => setModalSettings(settings), []);
-
-  const provideSnackbarSettings = useCallback(
-    (settings: SnackBarSettings) => setSnackbarSettings({ ...settings, isOpen: true }),
+  const provideModalSettings = useCallback(
+    (settings: ModalSettings) => setModalSettings(settings),
     []
   );
 
-  const closeModal = useCallback(() => setModalSettings(ModalInitialSettings), []);
+  const provideSnackbarSettings = useCallback(
+    (settings: SnackBarSettings) =>
+      setSnackbarSettings({ ...settings, isOpen: true }),
+    []
+  );
 
-  const closeSnackbar = useCallback(() => setSnackbarSettings(SnackbarInitialSettings), []);
+  const closeModal = useCallback(
+    () => setModalSettings(ModalInitialSettings),
+    []
+  );
+
+  const closeSnackbar = useCallback(
+    () => setSnackbarSettings(SnackbarInitialSettings),
+    []
+  );
 
   useEffect(() => {
     if (modalSettings.content) setBodyOverflowHidden(true);
@@ -105,15 +116,15 @@ export function ModalProvider({ children }: PropsWithChildren) {
   useEffect(() => {
     const handleHistoryChange = () => closeModal();
 
-    window.addEventListener('popstate', handleHistoryChange);
+    window.addEventListener("popstate", handleHistoryChange);
 
-    return () => window.removeEventListener('popstate', handleHistoryChange);
+    return () => window.removeEventListener("popstate", handleHistoryChange);
   }, [closeModal]);
 
   return (
     <ModalContext.Provider value={modalContextValue}>
       <Snackbar
-        anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+        anchorOrigin={{ vertical: "top", horizontal: "right" }}
         sx={{ zIndex: ZIndex.ForthLayer }}
         onClose={closeSnackbar}
         open={snackbarSettings.isOpen}

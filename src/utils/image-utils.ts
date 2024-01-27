@@ -1,6 +1,6 @@
-import { RegexConstants } from '../constants/regex-constants.ts';
+import { RegexConstants } from "../constants/regex-constants.ts";
 
-export const ValidImages = ['png', 'jpg', 'jpeg'];
+export const ValidImages = ["png", "jpg", "jpeg"];
 const MegabytesToBytes = 1_048_576;
 
 export const imageValidation = (file: File, imageMaxSizeInMb: number) => {

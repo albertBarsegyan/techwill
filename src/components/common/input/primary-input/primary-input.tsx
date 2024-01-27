@@ -1,6 +1,6 @@
-import { primaryInputUseStyles } from './primary-input.styles.ts';
-import { ReactNode } from 'react';
-import { Box, SxProps, TextField } from '@mui/material';
+import { primaryInputUseStyles } from "./primary-input.styles.ts";
+import { ReactNode } from "react";
+import { Box, SxProps, TextField } from "@mui/material";
 
 interface PrimaryInputProps {
   onChange: (inputValue: string) => void;
@@ -10,6 +10,7 @@ interface PrimaryInputProps {
   wrapperSx?: SxProps;
   sx?: SxProps;
   dataIntercomTarget?: string;
+  type?: string;
 }
 
 export function PrimaryInput({
@@ -18,6 +19,7 @@ export function PrimaryInput({
   icon,
   placeholder,
   wrapperSx,
+  type,
   sx,
   dataIntercomTarget,
 }: PrimaryInputProps) {
@@ -30,7 +32,14 @@ export function PrimaryInput({
 
   return (
     <Box sx={styles.inputWrapper} data-intercom-target={dataIntercomTarget}>
-      <TextField fullWidth value={value} placeholder={placeholder} onChange={handleChange} sx={styles.input} />
+      <TextField
+        fullWidth
+        type={type}
+        value={value}
+        placeholder={placeholder}
+        onChange={handleChange}
+        sx={styles.input}
+      />
 
       <Box sx={styles.iconWrapper}>{icon}</Box>
     </Box>

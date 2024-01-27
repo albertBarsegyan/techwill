@@ -1,25 +1,26 @@
-import { ThemeType } from '../types/theme-types.ts';
-import { ThemeOptions } from '@mui/material/styles';
+import { ThemeType } from "../types/theme-types.ts";
+import { ThemeOptions } from "@mui/material/styles";
 
 export const StyleConstants: ThemeType = {
   primary: {
-    main: '#02BF6F',
+    main: "#43B929",
   },
+  secondary: "#FF37A6",
   spacing: 8,
-  textDark: '#5D676B',
-  textDarker: '#2C3336',
-  gray100: '#EFF3F6',
-  gray200: '#DEE4E8',
-  gray300: '#9FA6AD',
-  gray500: '#838B97',
-  gray600: '#929292',
-  teal500: '#1D4842',
-  lightColor: '#ffffff',
-  greenLight: '#eefdf6',
-  redLight: '#EE4C3B',
-  redLighter: '#fffafa',
-  black500: '#1B1B1E',
-  iframeMainColor: '#edf4fc',
+  textDark: "#5D676B",
+  textDarker: "#2C3336",
+  gray100: "#EFF3F6",
+  gray200: "#DEE4E8",
+  gray300: "#9FA6AD",
+  gray500: "#838B97",
+  gray600: "#929292",
+  teal500: "#1D4842",
+  lightColor: "#FF37A6",
+  greenLight: "#eefdf6",
+  redLight: "#EE4C3B",
+  redLighter: "#fffafa",
+  black500: "#1B1B1E",
+  iframeMainColor: "#edf4fc",
 };
 
 export const ZIndex = {
@@ -33,34 +34,34 @@ export const ZIndex = {
 
 export const lightThemeOptions: ThemeOptions = {
   typography: {
-    fontFamily: ['Lato', 'sans-serif'].join(','),
+    fontFamily: ["Lato", "sans-serif"].join(","),
   },
   palette: {
-    mode: 'light',
+    mode: "light",
     spacing: 8,
     primary: {
-      main: '#02BF6F',
+      main: "#43B929",
     },
-    textDark: '#5D676B',
-    textDarker: '#2C3336',
-    gray100: '#EFF3F6',
-    gray200: '#DEE4E8',
-    gray300: '#9FA6AD',
-    gray400: '#4D4D4D',
-    gray500: '#838B97',
-    gray600: '#929292',
-    teal500: '#1D4842',
-    lightColor: '#ffffff',
-    greenLight: '#eefdf6',
-    redLight: '#EE4C3B',
-    redLighter: '#fffafa',
-    black500: '#1B1B1E',
-    iframeMainColor: '#edf4fc',
+    textDark: "#30821C",
+    textDarker: "#2C3336",
+    gray100: "#EFF3F6",
+    gray200: "#DEE4E8",
+    gray300: "#9FA6AD",
+    gray400: "#4D4D4D",
+    gray500: "#838B97",
+    gray600: "#929292",
+    teal500: "#1D4842",
+    lightColor: "#FF37A6",
+    greenLight: "#eefdf6",
+    redLight: "#EE4C3B",
+    redLighter: "#fffafa",
+    black500: "#1B1B1E",
+    iframeMainColor: "#edf4fc",
   },
 };
 
 export const DisabledButtonStyles = {
-  bgcolor: '#F0F2F4',
-  border: '1px solid #dee4e8',
-  color: 'gray300',
+  bgcolor: "#F0F2F4",
+  border: "1px solid #dee4e8",
+  color: "gray300",
 };

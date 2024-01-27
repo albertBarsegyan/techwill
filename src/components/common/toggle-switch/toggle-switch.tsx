@@ -1,5 +1,5 @@
-import { useId } from 'react';
-import './toggle-switch.css';
+import { useId } from "react";
+import "./toggle-switch.css";
 
 interface ToggleSwitchProps {
   isChecked: boolean;
@@ -7,7 +7,11 @@ interface ToggleSwitchProps {
   disabled?: boolean;
 }
 
-export function ToggleSwitch({ isChecked, handleChange, disabled = false }: ToggleSwitchProps) {
+export function ToggleSwitch({
+  isChecked,
+  handleChange,
+  disabled = false,
+}: ToggleSwitchProps) {
   const id = useId();
 
   return (
@@ -21,8 +25,8 @@ export function ToggleSwitch({ isChecked, handleChange, disabled = false }: Togg
         id={id}
       />
 
-      <label className={'toggle-switch-label'} htmlFor={id}>
-        <span className={'toggle-switch-inner'}></span>
+      <label className={"toggle-switch-label"} htmlFor={id}>
+        <span className={"toggle-switch-inner"}></span>
         <span className="toggle-switch-switch"></span>
       </label>
     </div>

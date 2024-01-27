@@ -1,9 +1,10 @@
-import { SxProps } from '@mui/material';
+import { SxProps } from "@mui/material";
 
 export interface ThemeType {
   primary: {
     main: string;
   };
+  secondary: string;
   spacing: number;
   textDark: string;
   textDarker: string;
