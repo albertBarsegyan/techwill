@@ -5,5 +5,5 @@ import eslint from "vite-plugin-eslint";
 
 export default defineConfig({
   plugins: [react(), eslint()],
-  build: { outDir: "dist", sourcemap: false },
+  build: { outDir: "dist" },
 });
