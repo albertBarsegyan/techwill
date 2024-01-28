@@ -34,7 +34,7 @@ export function Quiz({ handleNextStep }: { handleNextStep: () => void }) {
   const [checkedId, setCheckedId] = useState<number | null>(null);
 
   const nextPageValidation = () => {
-    if (checkedId) handleNextStep();
+    if (checkedId !== null) handleNextStep();
   };
 
   return (
