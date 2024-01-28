@@ -91,7 +91,7 @@ export function Quiz({ handleNextStep }: { handleNextStep: () => void }) {
           cursor: "pointer",
           backgroundColor: "#86d984",
         }}
-        disabled={!checkedId}
+        disabled={checkedId === null}
         hoverBackgroundColor="textDark"
         onClick={nextPageValidation}
       >
