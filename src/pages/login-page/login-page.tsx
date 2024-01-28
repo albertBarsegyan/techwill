@@ -21,7 +21,7 @@ export function LoginPage() {
       <Stack alignItems="center">
         <Typography
           sx={{
-            marginTop: "200px",
+            marginTop: "100px",
             marginBottom: "40px",
             color: "primary.main",
             fontSize: "36px",
