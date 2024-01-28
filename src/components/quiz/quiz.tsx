@@ -1,9 +1,4 @@
-import {
-  Checkbox,
-  FormControlLabel,
-  FormGroup,
-  Typography,
-} from "@mui/material";
+import { FormControlLabel, Radio, RadioGroup, Typography } from "@mui/material";
 import { useState } from "react";
 import { ButtonComponent } from "../common/button/primary-button/primary-button.tsx";
 
@@ -54,7 +49,7 @@ export function Quiz({ handleNextStep }: { handleNextStep: () => void }) {
         recommended for ensuring both comfort and safety?
       </Typography>
 
-      <FormGroup sx={{ marginTop: "18px" }}>
+      <RadioGroup sx={{ marginTop: "18px" }}>
         {questionVariants.map((questionVariant) => (
           <FormControlLabel
             sx={{ margin: "10px 0", alignItems: "start", gap: "0 10px" }}
@@ -62,7 +57,7 @@ export function Quiz({ handleNextStep }: { handleNextStep: () => void }) {
             checked={checkedId === questionVariant.id}
             key={questionVariant.id}
             control={
-              <Checkbox
+              <Radio
                 sx={{
                   "&.MuiCheckbox-root": {
                     padding: 0,
@@ -73,7 +68,7 @@ export function Quiz({ handleNextStep }: { handleNextStep: () => void }) {
             label={questionVariant.title}
           />
         ))}
-      </FormGroup>
+      </RadioGroup>
 
       <ButtonComponent
         sx={{
