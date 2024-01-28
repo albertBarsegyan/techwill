@@ -46,13 +46,25 @@ export function MissionStart({ handleNext }: { handleNext: () => void }) {
       <Typography
         sx={{
           color: "lightColor",
-          marginTop: "60px",
+          marginTop: "20px",
           fontSize: "48px",
           fontWeight: "600",
           textAlign: "center",
         }}
       >
         00:{seconds}
+      </Typography>
+
+      <Typography
+        textAlign="center"
+        sx={{
+          fontSize: "36px",
+          color: "#6C6A6A",
+          fontWeight: 600,
+          marginTop: "",
+        }}
+      >
+        20 points
       </Typography>
 
       {!isActive && (
@@ -63,7 +75,7 @@ export function MissionStart({ handleNext }: { handleNext: () => void }) {
             backgroundColor: "primary.main",
             color: "white",
             fontSize: "28px",
-            marginTop: "60px",
+            marginTop: "40px",
             fontWeight: "700",
             marginBottom: "100px",
           }}

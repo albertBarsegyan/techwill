@@ -36,12 +36,9 @@ export function Intro({ handleStartQuiz }: { handleStartQuiz: () => void }) {
           fontWeight: "300",
         }}
       >
-        Experiential hiking involves immersing yourself in the outdoor
-        environment and gaining a deeper connection with nature. To enhance your
-        experience and ensure safety, consider the following must-have items for
-        experiential hiking: comfortable footwear, weather-appropriate clothing,
-        hydration, headlamp/flashlight, insect repellent, emergency shelter, and
-        a first aid kit.
+        Experience hiking: immerse in nature safely with these essentials: comfy
+        footwear, weather-ready attire, hydration, headlamp, insect repellent,
+        emergency shelter, and first aid kit.
       </Typography>
 
       <ButtonComponent
