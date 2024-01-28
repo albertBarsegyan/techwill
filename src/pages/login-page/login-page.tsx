@@ -6,7 +6,7 @@ import { ButtonComponent } from "../../components/common/button/primary-button/p
 import { useAuth } from "../../hooks/use-auth.tsx";
 
 export function LoginPage() {
-  const [email, setEmail] = useState("our-friend-user");
+  const [email, setEmail] = useState("friend.user@mail");
   const [password, setPassword] = useState("our-friend-user");
   const { login } = useAuth();
 
@@ -66,6 +66,12 @@ export function LoginPage() {
             color: "white",
             fontWeight: "700",
           }}
+          disabledStyles={{
+            color: "white",
+            cursor: "pointer",
+            backgroundColor: "#86d984",
+          }}
+          disabled={!(email && password)}
           hoverBackgroundColor={"textDark"}
           onClick={handleLogin}
         >
